@@ -1,0 +1,38 @@
+---
+title: "groupproject"
+author: "Jason Su"
+date: "August 9, 2018"
+output: html_document
+---
+
+# Probability practice
+## Part A
+
+From the question, we know that $P_{RC}=0.3; P_{Y|RC}=0.5; P_{Y}=0.65$.
+Therefore, we could set up equation as followed:
+$$P_{Y} = P_{Y,RC} + P_{Y,TC}$$
+$$\Rightarrow P_{Y}=P(Y | RC) * P_{RC} + P(Y | PC) * P_{TC}$$
+$$\Rightarrow 0.65 = 0.5 * 0.3 + P(Y|PC) * 0.7$$
+We got,
+$$P(Y|PC) = \frac{0.65 - 0.5*0.3}{0.7}$$
+$$\Rightarrow P(Y|PC) = \frac{5}{7}$$
+Around 71.43% of people who are truthful clickers answered yes.
+
+## Part B
+
+We want to get the probability of having the disease based on getting positive result for the test. Let's denote it as $P(T | P)$.
+
+According to the Bayes' theorem,
+$$P(T|P) = \frac{P_{T,P}}{P_{p}}$$
+$$\Rightarrow P(T|P) = \frac{P(P|T)*P_{T}}{P(P|T)*P_{T} + P(P|F)*P_{F}}$$
+According to the question, we got $P_{T}=0.000025; P(P|T)=0.993; P(P|F)=1-0.9999=0.0001$
+
+$$\Rightarrow P(T|P) = \frac{0.993*0.000025}{0.993*0.000025 + 0.0001*0.999975}$$
+
+$$\Rightarrow P(T|P) \approx 0.1989$$
+The probability of having the disease is about 19.89%.
+
+Problems in implementing a universal testing policy:
+
+1. The probability of having the disease when getting positive result is actually not high. The result might cause unnecessary panic;
+2. All assumed probabilities need to be very accurate which might be hard to achieve in reality.
